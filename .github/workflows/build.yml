@@ -22,4 +22,4 @@ jobs:
       - name: View poetry --hlep
         run: poetry --help
       - name: Run Demo
-        run: poetry python demo1.py
+        run: poetry run python demo1.py
