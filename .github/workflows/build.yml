@@ -1,0 +1,19 @@
+name: CI
+on: push
+
+jobs:
+  ci:
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run image
+        uses: abatilo/actions-poetry@v2
+        with:
+          poetry-version: ${{ matrix.poetry-version }}
+      - name: View poetry --hlep
+        run: poetry --help
+      - name: Run Demo
+        run: poetry python demo1.py
