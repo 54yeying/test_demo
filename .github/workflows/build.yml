@@ -39,8 +39,6 @@ jobs:
       - name: Type Check
         run: poetry run pytype --config=pytype.cfg
       - name: Testing
-        run: |
-          poetry run pytest
-          poetry run coverage report
+        run: poetry run pytest
       - name: Running
         run: poetry run python demo1.py
