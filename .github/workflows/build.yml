@@ -36,11 +36,12 @@ jobs:
 
       - name: Code Format
         run: poetry run yapf
+
       - name: Type Check
         run: poetry run pytype --config=pytype.cfg
-      - name: Testing
-        run: poetry run pytest
-      - name: Testing coverage
-        run: poetry run coverage report
-      - name: Running
-        run: poetry run python demo1.py
+
+      - name: Testing and coverage
+        run: |
+          source .venv/bin/active
+          pytest tests/
+          coverage report
