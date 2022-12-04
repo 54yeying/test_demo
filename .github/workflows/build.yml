@@ -42,6 +42,6 @@ jobs:
 
       - name: Testing and coverage
         run: |
-          source .venv/bin/active
+          source .venv/bin/activate
           pytest tests/
           coverage report
