@@ -41,7 +41,4 @@ jobs:
         run: poetry run pytype --config=pytype.cfg
 
       - name: Testing and coverage
-        run: |
-          source .venv/bin/activate
-          pytest tests/
-          coverage report
+        run: poetry run pytest --cov
